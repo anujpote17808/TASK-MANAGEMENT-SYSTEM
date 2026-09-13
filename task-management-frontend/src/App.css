@@ -1,0 +1,223 @@
+/* ================================
+   GLOBAL APP
+================================ */
+
+#root {
+    min-height: 100vh;
+}
+
+
+/* ================================
+   3D CARD EFFECT
+================================ */
+
+.card {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px) rotateX(1deg) rotateY(-1deg);
+    box-shadow:
+        0 20px 40px rgba(15, 23, 42, 0.12);
+}
+
+
+/* ================================
+   DASHBOARD STAT CARDS
+================================ */
+
+.stat-card {
+    position: relative;
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.stat-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    border-radius: 50%;
+
+    background: rgba(99, 102, 241, 0.08);
+
+    top: -50px;
+    right: -40px;
+
+    transition: transform 0.4s ease;
+}
+
+.stat-card:hover {
+    transform:
+        translateY(-8px)
+        perspective(800px)
+        rotateX(2deg)
+        rotateY(-2deg);
+
+    box-shadow:
+        0 25px 50px rgba(15, 23, 42, 0.15);
+}
+
+.stat-card:hover::before {
+    transform: scale(1.4);
+}
+
+
+/* ================================
+   FLOATING ANIMATION
+================================ */
+
+.floating {
+    animation: floating 4s ease-in-out infinite;
+}
+
+@keyframes floating {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* ================================
+   FADE IN
+================================ */
+
+.fade-in {
+    animation: fadeIn 0.7s ease forwards;
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ================================
+   TASK CARD
+================================ */
+
+.task-card {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.task-card:hover {
+    transform:
+        translateY(-7px)
+        rotateX(1deg)
+        rotateY(-1deg);
+
+    box-shadow:
+        0 20px 45px rgba(15, 23, 42, 0.15);
+}
+
+
+/* ================================
+   STATUS BADGE
+================================ */
+
+.status-badge {
+    transition: transform 0.2s ease;
+}
+
+.status-badge:hover {
+    transform: scale(1.05);
+}
+
+
+/* ================================
+   NAVBAR
+================================ */
+
+.navbar {
+    box-shadow:
+        0 4px 20px rgba(15, 23, 42, 0.15);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+
+/* ================================
+   BUTTON
+================================ */
+
+.btn {
+    border-radius: 10px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(15, 23, 42, 0.12);
+}
+
+
+/* ================================
+   FORM
+================================ */
+
+.form-control,
+.form-select {
+    border-radius: 10px;
+
+    border: 1px solid #dbe1ea;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+
+    .card:hover {
+        transform: translateY(-4px);
+    }
+
+}
